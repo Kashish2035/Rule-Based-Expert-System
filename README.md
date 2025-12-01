@@ -1,64 +1,114 @@
-🔍 Rule-Based Inference Engine (Forward Chaining)
+📘 Rule-Based Expert System (Forward Chaining)
 
-A lightweight rule engine that uses if–then rules and a facts base to infer conclusions using forward chaining.
-This project demonstrates the fundamentals of expert systems, multi-step reasoning, and transparent inference logging.
+A simple Rule-Based Expert System built in Python that uses forward chaining to infer conclusions from user-provided facts (symptoms).
+This project demonstrates the fundamentals of knowledge-based systems, rule chaining, and inference logging.
 
-✨ Features
+🚀 Features
 
-User-Provided Facts
-Input initial facts such as symptoms or observations.
+✔ Rule Engine using IF–THEN rules
 
-Forward Chaining Engine
-Automatically applies rules to derive new conclusions.
+✔ Forward Chaining (Data-driven reasoning)
 
-Multi-Step Inference (Chaining)
-Supports cascading rule execution where one conclusion triggers another rule.
+✔ Rule Chaining (Multi-step inference)
 
-Reasoning Path Logging
-Displays how each conclusion was reached for full transparency.
+✔ Accepts user symptoms as input
 
-📁 Project Structure
-/root
- ├── rules.json        # Define if-then rules
- ├── engine.py         # Core forward-chaining implementation
- ├── facts.py          # Facts base handler
- ├── main.py           # CLI or app entry point
- └── README.md
+✔ Generates inferred conclusions
 
-🚀 How It Works
+✔ Logs inference steps to show reasoning path
 
-Load rules and initial facts
+✔ Easy to extend — add more rules anytime
 
-Run forward chaining
+📂 Project Structure
+project/
+│── rules.py        # Knowledge base (if-then rules)
+│── engine.py       # Forward chaining rule engine
+│── main.py         # User interaction & inference
+│── README.md       # Documentation
 
-Apply all rules whose conditions match current facts
+🧠 How It Works
 
-Add new inferred facts
+User enters symptoms (facts).
 
-Continue until no new facts can be derived
+The engine checks all rules.
 
-Output final conclusions + reasoning log
+If all conditions of a rule are satisfied, its conclusion becomes a new fact.
 
-🧪 Example Rule
-{
-  "if": ["fever", "cough"],
-  "then": "flu"
-}
+New facts trigger new rules → multi-step inference.
 
-Example Input Facts
+The engine stops when no more rules can be applied.
+
+All results + reasoning steps are displayed.
+
+📝 Example Usage
+Run the program:
+python main.py
+
+Input:
+fever, cough, body pain
+
+Output:
+--- Inferred Facts ---
 fever
 cough
+body_pain
+flu
+viral_infection
 
-Output
-Inferred: flu  
-Reason: Rule 1 fired because {fever, cough} were present.
+--- Reasoning Steps ---
+Rule fired: IF fever AND cough THEN flu
+Rule fired: IF flu AND body_pain THEN viral_infection
 
-▶️ Run the Project
+🧱 Rule Base
+
+Rules are stored in rules.py as Python dictionaries:
+
+{
+    "conditions": ["fever", "cough"],
+    "conclusion": "flu"
+}
+
+
+Easily add more rules to expand the system.
+
+🛠️ Installation
+1. Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+2. Run the program
 python main.py
+
+⚙️ Requirements
+
+Python 3.8+
+
+No external libraries required
+
+💡 Extending the System
+
+You can enhance this system by adding:
+
+✔ GUI (Tkinter / PyQt)
+
+✔ Web App (Flask / Django)
+
+✔ JSON or YAML rule files
+
+✔ Medical knowledge base
+
+✔ Cybersecurity threat detection rules
+
+If you want, I can help you implement any of these features.
+
+🤝 Contributing
+
+Pull requests are welcome!
+Feel free to open issues for suggestions, bugs, or improvements.
 
 📜 License
 
-MIT License — free to use and modify.
+This project is licensed under the MIT License.
 
 
 
